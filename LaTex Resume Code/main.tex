@@ -10,7 +10,7 @@
 
 % moderncv themes
 \moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
-\moderncvcolor{red}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\moderncvcolor{blue}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 %\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
 %\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
 
@@ -31,8 +31,8 @@
 %\phone[fixed]{+2~(345)~678~901}                    % optional, remove / comment the line if not wanted
 %\phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
 \email{fredrybin@gmail.com}                               % optional, remove / comment the line if not wanted
-\homepage{http://fredrybin.me}                         % optional, remove / comment the line if not wanted
-\extrainfo{https://github.com/frybin}                 % optional, remove / comment the line if not wanted
+\homepage{fredrybin.me}                         % optional, remove / comment the line if not wanted
+\extrainfo{github.com/frybin}                 % optional, remove / comment the line if not wanted
 \photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
 %\quote{Some quote}                                 % optional, remove / comment the line if not wanted
 
@@ -55,25 +55,31 @@
 
 \section{Objective}
 %\cvitem{title}{\emph{Title}}
-\cvitem{}{Actively seeking Co-op position in Computing Security or Computer Science. Available May 2018 - August 2018}
+\cvitem{}{Actively seeking co-op position in Computing Security or Computer Science. Available May 2018 - August 2018}
 %\cvitem{description}{Short thesis abstract}
 
 \section{Education}
 \cventry{Expected Graduation: 2022}{Computing Security Bachelor of Science}{Rochester Institute of Technology}{}{GPA 3.92}{}  % arguments 3 to 6 can be left empty
 %\cventry{year--year}{Degree}{Institution}{City}{\textit{Grade}}{Description}
-\section{Projects}
-\cvitemwithcomment{Alexa RSS Skill}{Fall 2017 - Spring 2018}{https://github.com/frybin/Alexa-RSS-Skill}
-An Alexa skill that reads out the information stored in an article property in an RSS Feed. Written in Node.js and Amazon Lambda, open source on GitHub
-
-\cvitemwithcomment{RSS Web App}{Winter 2017 - Spring 2018}{https://github.com/frybin/RSS-Web-App}
-A companion web app that interacts and edits with the database of the previous mentioned Alexa Skill. Written in Python-Flask, open source on GitHub
-
 
 \section{Skills}
 \cvlistdoubleitem{Python }{AWS Lambda}
 \cvlistdoubleitem{SQL Databases}{Python-Flask }
 \cvlistdoubleitem{Node.js }{Java}
 %\cvlistdoubleitem{}{}
+
+\section{Projects}
+\cvitemwithcomment{Alexa RSS Skill}{github.com/frybin/Alexa-RSS-Skill}{Fall 2017 - Spring 2018}
+{\begin{itemize}%
+\item An Alexa skill that reads out the information stored in an article property in an RSS Feed.
+\item Written in Node.js and Amazon Lambda, open source on GitHub
+\end{itemize}}
+
+\cvitemwithcomment{RSS Web App}{github.com/frybin/RSS-Web-App}{Winter 2017 - Spring 2018}
+{\begin{itemize}%
+\item A companion web app that interacts and edits with the database of the previous mentioned Alexa Skill.
+\item Written in Python-Flask, open source on GitHub
+\end{itemize}}
 
 \section{Experience}
 %\subsection{Vocational}
@@ -101,7 +107,8 @@ A companion web app that interacts and edits with the database of the previous m
 %\end{itemize}}
 \cventry{May 2017 -- August 2017}{Manager}{Energy Zone Wellness Center}{}{}
 {\begin{itemize}%
-\item Managed a staff of 4 and gave them their work schedule, time sheets, directed clients to appropriate staff, and responsible for day to day operations.
+\item Managed a staff of 4 and gave them their work schedule and time sheets
+\item Directed clients to appropriate staff, and responsible for day to day operations.
 \item Scheduled client’s spa services via spa software and monitored incoming phone inquiries.
 \end{itemize} }
 \cventry{July 2015 --July 2016}{Web Developer}{Sunlik}{}{}
@@ -115,7 +122,6 @@ A companion web app that interacts and edits with the database of the previous m
 \section{Organizations}
 \cvitemwithcomment{Computer Science House:}{Member}{September 2017 - Current}
 %\cvitemwithcomment{Technology Club:}{President}{November 2015 - May 2017}
-
 
 % Publications from a BibTeX file without multibib
 %  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
@@ -135,6 +141,5 @@ A companion web app that interacts and edits with the database of the previous m
 
 % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
 \end{document}
-
 
 %% end of file `template.tex'.

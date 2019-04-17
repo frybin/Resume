@@ -239,6 +239,8 @@
 % defines additional personal information (optional)
 % usage: \extrainfo{<text>}
 \newcommand*{\extrainfo}[1]{\def\@extrainfo{#1}}
+\newcommand*{\moreinfo}[1]{\def\@moreinfo{#1}}
+
 
 % colors
 \definecolor{color0}{rgb}{0,0,0}% main default color, normally left to black
@@ -374,10 +376,11 @@
 % makes a resume line with 2 list items
 % usage: \cvlistdoubleitem[label]{item1}{item2}
 \newcommand*{\cvlistdoubleitem}[3][\listitemsymbol]{}
-
+\newcommand*{\doubleitem}[3][]{}
 % makes a typical resume job / education entry
 % usage: \cventry[spacing]{years}{degree/job title}{institution/employer}{localization}{optionnal: grade/...}{optional: comment/job description}
 \newcommand*{\cventry}[7][.25em]{}
+\newcommand*{\cvobjective}[7][.25em]{}
 
 % makes a resume entry with a proficiency comment
 % usage: \cvitemwithcomment[spacing]{header}{text}{comment}

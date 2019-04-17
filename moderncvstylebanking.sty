@@ -92,7 +92,8 @@
     \ifthenelse{\isundefined{\@email}}{}{\addtomaketitle{\emailsymbol\emaillink{\@email}}}%
     \ifthenelse{\isundefined{\@homepage}}{}{\addtomaketitle{\homepagesymbol\httplink{\@homepage}}}%
     \ifthenelse{\isundefined{\@extrainfo}}{}{\addtomaketitle{\@extrainfo}}%
-    \flushmaketitle}\\[2.5em]}% need to force a \par after this to avoid weird spacing bug at the first section if no blank line is left after \maketitle
+    \ifthenelse{\isundefined{\@moreinfo}}{}{\addtomaketitle{\@moreinfo}}%
+    \flushmaketitle}\\[0em]}% need to force a \par after this to avoid weird spacing bug at the first section if no blank line is left after \maketitle
 
 
 %-------------------------------------------------------------------------------
@@ -155,7 +156,7 @@
   \ifthenelse{\isundefined{\@quote}}%
     {}%
     {{\centering\begin{minipage}{\quotewidth}\centering\quotestyle{\@quote}\end{minipage}\\[2.5em]}}%
-  \par}% to avoid weird spacing bug at the first section if no blank line is left after \maketitle}
+  \p}% to avoid weird spacing bug at the first section if no blank line is left after \maketitle}
 
 \RenewDocumentCommand{\section}{sm}{%
   \par\addvspace{2.5ex}%
@@ -173,7 +174,7 @@
   \strut\subsectionstyle{#2}{\color{color1}{\subsectionfill}}%
   \par\nobreak\addvspace{0.5ex}\@afterheading}
 
-\renewcommand*{\cvitem}[3][.25em]{%
+\renewcommand*{\cvitem}[3][.20em]{%
   \ifthenelse{\equal{#2}{}}{}{\hintstyle{#2}: }{#3}%
   \par\addvspace{#1}}
 
@@ -194,15 +195,33 @@
     {}%
     {\listitemsymbol\begin{minipage}[t]{\listdoubleitemmaincolumnwidth}#3\end{minipage}}}}
 
+\renewcommand*{\doubleitems}[3][.25em]{%
+  \cvitem[#1]{}{\begin{minipage}[t]{\listdoubleitemmaincolumnwidth}#2\end{minipage}%
+  \hfill% fill of \separatorcolumnwidth
+  \ifthenelse{\equal{#3}{}}%
+    {}%
+    {\begin{minipage}[t]{\listdoubleitemmaincolumnwidth}#3\end{minipage}}}}
+
 \renewcommand*{\cventry}[7][.25em]{
   \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}%
-	  {\bfseries #4} & {\bfseries #5} \\%
+	  {\bfseries #4} & {\itshape #5} \\%
 	  {\itshape #3\ifthenelse{\equal{#6}{}}{}{, #6}} & {\itshape #2}\\%
   \end{tabular*}%
   \ifx&#7&%
     \else{\\\vbox{\small#7}}\fi%
   \par\addvspace{#1}}
-
+  
+ 
+\renewcommand*{\cvobjective}[7][.25em]{
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}%
+	  {\bfseries #4} & {\itshape #5} \\%
+	  {\itshape #3\ifthenelse{\equal{#6}{}}{}{, #6}} & {\itshape #2}\\%
+  \end{tabular*}%
+  \ifx&#7&%
+    \else{\\\vbox{\small#7}}\fi%
+  \par\addvspace{#1}}
+  
+ 
 \newbox{\cvitemwithcommentmainbox}
 \newlength{\cvitemwithcommentmainlength}
 \newlength{\cvitemwithcommentcommentlength}
@@ -210,7 +229,7 @@
   \savebox{\cvitemwithcommentmainbox}{\ifthenelse{\equal{#2}{}}{}{\hintstyle{#2}: }#3}%
   \setlength{\cvitemwithcommentmainlength}{\widthof{\usebox{\cvitemwithcommentmainbox}}}%
   \setlength{\cvitemwithcommentcommentlength}{\maincolumnwidth-\separatorcolumnwidth-\cvitemwithcommentmainlength}%
-  \begin{minipage}[t]{\cvitemwithcommentmainlength}\ifthenelse{\equal{#2}{}}{}{\hintstyle{#2}: }#3\end{minipage}%
+  \begin{minipage}[t]{\cvitemwithcommentmainlength}\ifthenelse{\equal{#2}{}}{}{\hintstyle{#2} }#3\end{minipage}%
   \hfill% fill of \separatorcolumnwidth
   \begin{minipage}[t]{\cvitemwithcommentcommentlength}\raggedleft\small\itshape#4\end{minipage}%
   \par\addvspace{#1}}

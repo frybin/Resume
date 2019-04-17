@@ -182,6 +182,13 @@
     {}%
     {\listitemsymbol\begin{minipage}[t]{\listdoubleitemmaincolumnwidth}#3\end{minipage}}}}
 
+\renewcommand*{\doubleitem}[3][.25em]{%
+  \cvitem[#1]{}{\begin{minipage}[t]{\listdoubleitemmaincolumnwidth}#2\end{minipage}%
+  \hfill% fill of \separatorcolumnwidth
+  \ifthenelse{\equal{#3}{}}%
+    {}%
+    {\begin{minipage}[t]{\listdoubleitemmaincolumnwidth}#3\end{minipage}}}}
+
 \newbox{\cventryyearbox}
 \newlength{\cventrytitleboxwidth}
 \renewcommand*{\cventry}[7][.25em]{%

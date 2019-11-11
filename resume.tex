@@ -1,0 +1,108 @@
+%%%%%%%%%%%%%%%%%
+% This is an example CV created using altacv.cls (v1.0.1, 11 September 2016) written by
+% LianTze Lim (liantze@gmail.com), based on the 
+% Cv created by BusinessInsider at http://www.businessinsider.my/a-sample-resume-for-marissa-mayer-2016-7/?r=US&IR=T
+% 
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+\documentclass[10pt,letterpaper]{altacv}
+
+%% AltaCV uses the fontawesome and academicon fonts
+%% and packages. 
+%% See texdoc.net/pkg/fontawecome and http://texdoc.net/pkg/academicons for full list of symbols.
+%% 
+%% Compile with LuaLaTeX for best results. If you
+%% want to use XeLaTeX, you'll need to install
+%% Academicons.ttf in your operating system's font %% folder.
+
+
+% Change the page layout if you need to
+\geometry{left=1cm,right=8.8cm,marginparwidth=6.8cm,marginparsep=1cm,top=1cm,bottom=1cm}
+
+% Change the font if you want to.
+
+% Change the colours if you want to
+\definecolor{VividPurple}{HTML}{3E0097}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkBlue}{HTML}{1c304b}
+\definecolor{LightBlue}{HTML}{2079c7}
+\definecolor{Purple}{HTML}{4e5266}
+\definecolor{DarkPurple}{HTML}{1E2037}
+\definecolor{LightPurple}{HTML}{656dba}
+%\colorlet{heading}{VividPurple}
+\colorlet{heading}{DarkBlue}
+\colorlet{heading-line}{LightBlue}
+\colorlet{accent}{Purple}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+\RequirePackage{bookmark}
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+
+\begin{document}
+
+\name{Fred Rybin}
+\tagline{Computing Security Major with Focus in Networking}
+\photo{4.9cm}{}
+% Cropped to square from my github page
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  \begin{flushright}
+    \normalsize
+    \email{\href{mailto:fredrybin@gmail.com}{fredrybin@gmail.com}}
+    \phone{\href{tel:12013364822}{(201) 336-4822}}
+    % \homepage{\href{https://sunlik.net}{sunlik.net}}
+    \linkedin{\href{https://www.linkedin.com/in/frybin/}{linkedin.com/in/frybin}}
+    \github{\href{https://github.com/frybin}{frybin}}
+  \end{flushright}
+}
+
+%% Make the header extend all the way to the right, if you want. Extend the right margin by 8cm (=6.8cm marginparwidth + 1.2cm marginparsep)
+\begin{adjustwidth}{}{-8cm}
+\makecvheader
+\end{adjustwidth}
+
+%% Provide the file name containing the sidebar contents as an optional parameter to \cvsection.
+%% You can always just use \marginpar{...} if you do
+%% not need to align the top of the contents to any
+%% \cvsection title in the "main" bar.
+\cvsection[page1sidebar]{Experience}
+
+\cvexperience{Cisco Meraki}{Network Support Engineer Intern}{I was responsible for providing technical support for our clients by diagnosing problems and troubleshooting the entire Cisco Meraki product line. In addition, I had also recreated clients environment to try to reproduce the issue they were having four our development team.}{September 2019 -- December 2019}
+
+\cvexperience{Sumitomo Mitsui Trust Bank (U. S. A.) Limited}{Information Security Analyst Intern}{Designed, Implemented and Released Internal Python Flask web app that has defined Role-Based Access, LDAP/AD Login, Data Parsing and Relations, and User Signature creation/validation}{May 2019 -- Aug 2019}
+\morecvexperience{Information Security Analyst Intern}{Cooperated in a team to design, develop, deploy changes, and to update the security aspects of the organization. Worked with others to implement a new SIEM for the company and had used those metrics to set up a system to report the data.}{Jun 2018 -- Aug 2018}
+
+\cvexperience{Sunlik LLC}{Technical Specialist}{I have built software and implemented new technologies for our clients. I had designed the website and network for Energy Zone Wellness Center and set up their POS and EMR systems. In addition, I have created the website for Holistic Studio White Lotus and W.I. Trichology LLC.}{May 2017 -- Present}
+
+\cvsection{Projects}
+
+\nocite{*}
+
+\cvproject{System Scanner}{Can be Shown Upon Request}{An application that Scans a filesystem for files that contain PII, PHI, and PCI Data and save the found information into an SQLite DB that can be used to generate a report.}{Golang}
+
+\cvproject{Access Recertification Web App}{Can be Shown Upon Request}{A Web-Based application that can parse multiple application user dumps that are in a .xlsx format and parses the data to show what permissions a user in all the app has, and then allows people to verify those permissions.}{Python, Flask, LDAP}
+
+\cvproject{Personal Server}{Can be Shown Upon Request}{A Dell server that has been built to use VMWare with multiple different VMs running that do various tasks like File Storage, User Authentication, Custom Applications, Development, and other VMs for learning new skills}{DevOps, VMWare}
+
+\cvproject{RideBoard Slack Bot}{\href{https://github.com/frybin/csh-rideboard-bot}{github.com/frybin/csh-rideboard-bot}}{A Slack Bot that was built to interface with the {\href{https://github.com/ag-ayush/RideBoardAPI}{Rideboard API}} that interacted with {\href{https://github.com/ag-ayush/rideboard}{Rideboard}} which was an application developed by me and my friend for hosting large-scale events during which users would like to carpool in order to reach their destination.}{Python}       
+
+% \cvproject{Python PDF Ticket Generator}{Can be Shown Upon Request}{}{Python}
+
+% \cvproject{CSH Smart Room Alexa Skill}{\href{https://github.com/frybin/SmartRoomSkill}{github.com/frybin/SmartRoomSkill}}{}{Python}
+
+% \cvproject{RSS Feed Alexa Skill}{\href{https://github.com/frybin/Alexa-RSS-Skill}{github.com/frybin/Alexa-RSS-Skill}}{}{Node.JS}
+
+\end{document}
